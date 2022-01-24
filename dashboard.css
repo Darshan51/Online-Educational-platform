@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*background-color: rgb(248, 237, 229);*/
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main-header {
+    /* min-height:8vh; */
+    width: 100%;
+    border-bottom-color: darkgreen;
+}
+
+
+/*----------------- Navigation bar styling ----------------*/
+
+nav {
+    display: flex;
+    padding: 0% 6%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(161, 42, 161, 0);
+}
+
+nav img {
+    width: 150px;
+    height: 85px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: rgb(15, 12, 12);
+    text-decoration: none;
+    font-size: 13px;
+    font-style: monospace;
+    font-weight: bold;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+
+/*-----To cover Mobile version of navigation bar ------*/
+
+nav .fas {
+    display: none;
+}
+
+@media(max-width:750px) {
+    .welcome h1 {
+        font-size: 20px;
+    }
+    .welcome p {
+        font-size: 14px;
+    }
+    .nav-links ul li {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        margin-top: 25px;
+        position: absolute;
+        background: #9fe9df;
+        width: 200px;
+        border-radius: 5px;
+        ;
+        top: 5vh;
+        right: 0px;
+        text-align: left;
+        z-index: 1;
+        transition: 0.5s;
+    }
+    nav .fas {
+        display: block;
+        color: rgb(0, 0, 0);
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul {
+        padding: 20px;
+    }
+}
+
+
+/*---------------------courses---------------*/
+
+.row {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.course-col {
+    flex-basis: 31%;
+    border-radius: 10px;
+    background: #f9eaea;
+    margin-left: 5px;
+    margin-right: 5px;
+    /* padding: 5px 3px; */
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.course-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.4);
+}
+
+@media(max-width:750px) {
+    .row {
+        flex-direction: column;
+    }
+    .course-col {
+        margin: 8px;
+    }
+}
+
+
+/* ------customizing the three main containers-------- */
+
+.Megacontainer {
+    width: 100%;
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-around;
+}
+
+.maincontainer {
+    width: 56%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    border-color: slategray;
+}
+
+.adcontainer {
+    border-radius: 2px;
+    width: 21%;
+    background-color: chartreuse;
+}
+
+.menu {
+    padding-top: 10px;
+    width: 21%;
+    border-radius: 2px;
+    background-color: rgb(0, 0, 0);
+}
+
+.leftmenu {
+    background-color: darkorange !important;
+    width: inherit;
+    font-size: 14px;
+}
+
+.leftmenu a:hover {
+    background-color: cyan;
+}
+
+
+/*---hide menu bar----*/
+
+.showChapter {
+    display: none;
+    width: 5%;
+    margin-left: 10px;
+}
+
+
+/* ------------the mobile versions of dropdown menus---------------*/
+
+@media(max-width:750px) {
+    .adcontainer {
+        display: none;
+    }
+}
+
+@media(max-width:1050px) {
+    .showChapter {
+        display: inline-block;
+    }
+    .showChapter .fas {
+        color: rgb(0, 0, 0);
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .leftmenu2 h4 {
+        font-size: 20px;
+    }
+    .leftmenu a {
+        font-size: 14px;
+    }
+    .container {
+        display: block;
+    }
+    .maincontainer {
+        margin-left: 0.5%;
+        margin-right: 1%;
+        width: 70%;
+        height: 100vh;
+    }
+    .adcontainer {
+        width: 30%;
+    }
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: rgb(0, 0, 0);
+        width: 200px;
+        /* height:100vh;  */
+        left: 0px;
+        text-align: left;
+        z-index: 1;
+        transition: 0.5s;
+    }
+    a.btn {
+        font-size: 14px;
+    }
+}
+
+
+/*-----------overrinding the boostrap code of dropdown menu---------*/
+
+.btn {
+    max-width: 90%;
+    background-color: black;
+    margin: auto;
+}
+
+.btn:hover {
+    background-color: cornflowerblue;
+}
+
+h3 {
+    font-size: 18px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+
+/* ------------------------video player----------------- */
+
+.maincontainer {
+    padding: 10px;
+}
+
+div#vd-container {
+    border-radius: 2px;
+    box-shadow: 0 0 2px 2px rgb(0 0 0 / 70%);
+}
